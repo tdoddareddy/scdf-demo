@@ -103,7 +103,7 @@ task launch SagaHappyPath --arguments "--increment-instance-enabled=true"
 #### Create the Composed Task 
 Demo failure of Uppercase which will cause Lowercase to run and skip reverse
 ```bash
-task create SagaBusFail1 --definition "Import: FileIngestApp --local-file-path=classpath:bf-names.csv && Uppercase: UppercaseApp 'COMPLETED'->Reverse: ReverseApp '*'->Lowercase: LowercaseApp"
+task create SagaBusFail1 --definition "Import: FileIngestApp --file-ingest:localFilePath=classpath:bf-names.csv && Uppercase: UppercaseApp 'COMPLETED'->Reverse: ReverseApp '*'->Lowercase: LowercaseApp"
 ```
 
 #### Run the task
